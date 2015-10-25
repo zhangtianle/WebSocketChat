@@ -1,0 +1,80 @@
+﻿h1{
+	text-align:center;
+	padding:20px 0;
+}
+#userMessage{
+	text-align:center;
+}
+#userMessage a{
+	margin-left:10px;
+	text-decoration:underline;
+}
+#chatBox{
+	width:60%;
+	min-width:350px;
+	padding:5px;
+	border:1px solid #eee;
+	margin:30px auto 0;
+	background-color:#fff;
+	overflow:hidden;
+}
+#show,#input,#users{
+	background-color:rgb(100,174,249);
+}
+#show,#input{
+	width:75%;
+	min-width:200px;
+	float:left;
+}
+#show{
+	height:300px;
+	overflow:auto;
+}
+#show .message{
+	padding:10px 5px;
+}
+#show .header span{
+	padding-right:20px;
+}
+#show .content{
+	text-indent:2em;
+}
+#input{
+	position:relative;
+	margin-top:10px;
+	height:150px;
+}
+#input textarea{
+	width:100%;
+	height:100%;
+	color:#fff;
+	font-size:18px;
+	background-color:inherit;
+	border:none;
+	outline:none;
+	resize:none;
+}
+#input button{
+	position:absolute;
+	right:0;
+	bottom:0;
+	padding:5px 10px;
+	background-color:rgb(100,174,249);
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+	border:1px solid #eee;
+}
+#users{
+	float:right;
+	width:24%;
+	height:460px;
+	min-width:100px;
+}
+#users h2{
+	font-size:22px;
+}
+#users p{
+	padding-left:20px;
+	font-size:18px;
+}
