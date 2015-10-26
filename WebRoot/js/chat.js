@@ -95,6 +95,8 @@ function messageHandle(event) {
                 var $userName = $("<p></p>");
                 $userName.text(usernames[i]);
                 $usersInfo.append($userName);
+                //让滚动条自动滚到底
+                $show.get(0).scrollTop = $show.get(0).scrollHeight;
             }
             break;
         //删除用户信息

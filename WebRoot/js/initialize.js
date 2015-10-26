@@ -7,7 +7,7 @@ var $show = $("#show");
 var $usersInfo = $("#usersInfo");
 var currentUser = $("#userMessage span").text();//当前登陆的用户名
 //TODO
-var socket = new Socket("ws://113.251.218.211:8080/RealTimeChat/webSocketServer.do",messageHandle);
+var socket = new Socket("ws://localhost:8080/RealTimeChat/webSocketServer.do",messageHandle);
 
 
 //1.初始化文本输入框
