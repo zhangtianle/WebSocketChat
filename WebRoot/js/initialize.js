@@ -5,17 +5,15 @@ var $submit = $("#submit");
 var $textarea = $("#input textarea");
 var $show = $("#show");
 var $usersInfo = $("#usersInfo");
-var currentUser = "";
+var currentUser = $("#userMessage span").text();//当前登陆的用户名
 //TODO
-var socket = new Socket("ws://www.baidu.com",messageHadnle);
-socket.send(JSON.stringify({type:3}));
+var socket = new Socket("ws://113.251.218.211:8080/RealTimeChat/webSocketServer.do",messageHandle);
+
 
 //1.初始化文本输入框
 $textarea.keyup(function(event){
     if(event.keyCode == 13) {
-        if(!$.trim($textarea.val())) return false;
         $submit.trigger(("click"));
-        $textarea.val("");
     }
 });
 $textarea.keypress(function() {
@@ -35,13 +33,19 @@ $submit.click(function(event){
     event.preventDefault();
     event.stopPropagation();
     console.log($textarea.val());
-    var $message = messagePackage({
-        userName:currentUser,
+    if($textarea.val() == "") return;
+    var message = {
+        username:currentUser,
         timeSign:getTime().time,
         content:$textarea.val()
-    });
-    $show.append();
+    };
+    var $message = messagePackage(message);
+    $show.append($message);
+    $textarea.val("");
     //TODO 将消息发送到服务器
+
+    message.type = 1;
+    socket.send(JSON.stringify(message));
 
     //让滚动条自动滚到底
     $show.get(0).scrollTop = $show.get(0).scrollHeight;

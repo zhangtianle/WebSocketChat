@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>网络聊天室</title>
 <link rel="stylesheet" type="text/css" href="style/common.css"/>
 <link rel="stylesheet" type="text/css" href="style/chat.css"/>
@@ -16,16 +16,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
         <h1>网络聊天室</h1>
 		<div id="userMessage">
-			当前用户:<span>用户1</span>
-			<a href="#">注销</a>
+			当前用户:<span>${name}</span>
+			<a href="login.do">注销</a>
 		</div>
         <section id="chatBox">
 			<div id="users">
 				<h2>在线用户</h2>
 				<div id="usersInfo">
-					<p>用户1</p>
-					<p>用户2</p>
-					<p>用户3</p>
+					<p>正在获取列表...</p>
 				</div>
 			</div>
 			<div id="show">
@@ -33,10 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p class="header"><span>用户1</span><time>19:01:22</time></p>
 					<p class="content">这是聊天内容</p>
 				</section>
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
+
 			</div>
 			<form action="#" id="input" method="post">
 				<textarea name="message"></textarea>
@@ -49,3 +44,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script type="text/javascript" src="js/initialize.js"></script>
 </body>
 </html>
+

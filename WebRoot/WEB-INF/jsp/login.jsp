@@ -23,10 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </form>
         <div class="append">
             <a href="#" class="left">忘记密码?</a>
-            <a href="#" class="right">注册</a>
+            <a href="register.do" class="right">注册</a>
         </div>
     </div>
 	
 	
 </body>
 </html>
+

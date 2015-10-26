@@ -57,7 +57,7 @@
             }
             
 			
-            ws = new WebSocket('ws://localhost:8080/RealTimeChat/webSocketServer.do');/* (url.indexOf('sockjs') != -1) ? 
+            ws = new WebSocket('ws://113.250.156.136:8080/RealTimeChat/webSocketServer.do');/* (url.indexOf('sockjs') != -1) ? 
                 new SockJS(url, undefined, {protocols_whitelist: transports,Spring4WebSocketDemo,RealTimeChat}) :  */
                 
                 
