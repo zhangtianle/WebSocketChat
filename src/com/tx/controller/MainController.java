@@ -31,7 +31,10 @@ public class MainController {
     public String start() {
         return "start";
     }
-	
+	@RequestMapping("toClient.do")
+	public String toClient(){
+		return "client" ;
+	}
 	
 	
 	@RequestMapping("loginServer.do")

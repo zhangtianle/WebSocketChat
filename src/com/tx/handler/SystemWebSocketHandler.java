@@ -12,21 +12,22 @@ import org.springframework.web.socket.WebSocketSession;
 public class SystemWebSocketHandler implements WebSocketHandler {
 	 
  
-    private static final ArrayList<WebSocketSession> users = new ArrayList<WebSocketSession>();;
+    private static ArrayList<WebSocketSession> users = new ArrayList<WebSocketSession>();;
  
  
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
     	System.out.println("MyConnectionEstablished");
     	String i = session.getId();
-    	System.out.println(i);
+    	System.out.println(i + " user size:" + users.size());
         users.add(session);
+        
     }
  
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
  
-        //sendMessageToUsers();
+    	sendMessageToUsers(message);
     }
  
     @Override
@@ -52,7 +53,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
      *
      * @param message
      */
-    public void sendMessageToUsers(TextMessage message) {
+    public void sendMessageToUsers(WebSocketMessage<?> message) {
         for (WebSocketSession user : users) {
             try {
                 if (user.isOpen()) {

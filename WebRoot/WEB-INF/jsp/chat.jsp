@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>网络聊天室</title>
 <link rel="stylesheet" type="text/css" href="style/common.css"/>
 <link rel="stylesheet" type="text/css" href="style/chat.css"/>
@@ -16,37 +16,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
         <h1>网络聊天室</h1>
 		<div id="userMessage">
-			<span>当前用户:${name}</span>
+			当前用户:<span>用户1</span>
 			<a href="#">注销</a>
 		</div>
         <section id="chatBox">
 			<div id="users">
 				<h2>在线用户</h2>
-				<p>用户1</p>
-				<p>用户2</p>
-				<p>用户3</p>
+				<div id="usersInfo">
+					<p>用户1</p>
+					<p>用户2</p>
+					<p>用户3</p>
+				</div>
 			</div>
 			<div id="show">
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
-				<section class="message">
-					<p class="header"><span>用户1</span><time>19:01:22</time></p>
-					<p class="content">这是聊天内容</p>
-				</section>
 				<section class="message">
 					<p class="header"><span>用户1</span><time>19:01:22</time></p>
 					<p class="content">这是聊天内容</p>
@@ -58,11 +40,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<form action="#" id="input" method="post">
 				<textarea name="message"></textarea>
-				<button type="submit">发送</button>
+				<button type="submit" id="submit">发送</button>
 			</form>
 		</section>
-   
-	
-	
+
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/chat.js"></script>
+		<script type="text/javascript" src="js/initialize.js"></script>
 </body>
 </html>
