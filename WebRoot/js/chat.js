@@ -78,6 +78,8 @@ function messageHandle(event) {
                 content : data.content
             });
             $show.append($message);
+            //让滚动条自动滚到底
+            $show.get(0).scrollTop = $show.get(0).scrollHeight;
             break;
         //向已经在线的用户发送用户列表更新信息
         case 2:
@@ -95,9 +97,8 @@ function messageHandle(event) {
                 var $userName = $("<p></p>");
                 $userName.text(usernames[i]);
                 $usersInfo.append($userName);
-                //让滚动条自动滚到底
-                $show.get(0).scrollTop = $show.get(0).scrollHeight;
             }
+           
             break;
         //删除用户信息
         case 4:
