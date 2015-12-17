@@ -45,7 +45,6 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 		if (type.equals("0")) {
 			userMaps.put(session.getId(), bean.getUsername());
 			sendtoAllOnlineUsers();
-//			sendOnlineUsers(session);
 		} else if (type.equals("1")) {
 			sendMessageToUsers(message);
 		}

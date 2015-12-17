@@ -21,6 +21,16 @@ public class MainController {
 		return "client" ;
 	}
 	
+	@RequestMapping("register.do")
+	public String gtRegister() {
+		return "register";
+	}
+	
+	@RequestMapping("login.do")
+	public String gtLogin() {
+		return "login";
+	}
+	
 	@RequestMapping("loginServer.do")
 	public ModelAndView login(@RequestParam("username") String username,
 			@RequestParam("password") String password) {
@@ -38,16 +48,6 @@ public class MainController {
 		return modelAndView;  
 	}
 	
-	@RequestMapping("register.do")
-	public String gtRegister() {
-		return "register";
-	}
-	
-	@RequestMapping("login.do")
-	public String gtLogin() {
-		return "login";
-	}
-
 	@RequestMapping(value = "registerServer.do", method = RequestMethod.POST)
 	public ModelAndView gtRegister(@RequestParam("username") String username,
 			@RequestParam("password") String password) {
